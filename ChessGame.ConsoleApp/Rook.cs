@@ -29,8 +29,7 @@ namespace ChessGame.ConsoleApp
 
         public override bool IsValidMove(Board board, int dst)
         {
-
-            // int stepCount = board.CalculateSteps(this, dst);
+            //ToDo: checking for pieces of same and diffrnt color
             int src = board.WhereIs(this);
             Tuple<int, int> srcPlace = board.GetCoordinate(src);
             Tuple<int, int> dstPlace = board.GetCoordinate(dst);
@@ -47,25 +46,21 @@ namespace ChessGame.ConsoleApp
             {
                 case Direction.Up:
                     int x = board.WhereIs(this);
-                    //int toUp = x + stepCount;
                     board.SetPiece(this, dst);
                     return true;
 
                 case Direction.Down:
                     int a = board.WhereIs(this);
-                    // int toDown = a - stepCount;
                     board.SetPiece(this, dst);
                     return true;
 
                 case Direction.Left:
                     int y = board.WhereIs(this);
-                    //int leftPlace = y - stepCount;
                     board.SetPiece(this, dst);
                     return true;
 
                 case Direction.Right:
                     int z = board.WhereIs(this);
-                    //int place = z + stepCount;
                     board.SetPiece(this, dst);
                     return true;
 
@@ -73,8 +68,6 @@ namespace ChessGame.ConsoleApp
                     return false;
 
             }
-
-
         }
 
         #endregion Public Methods
