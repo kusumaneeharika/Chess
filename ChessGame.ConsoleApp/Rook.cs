@@ -9,7 +9,7 @@ namespace ChessGame.ConsoleApp
     class Rook : Piece
     {
         #region Properties
-
+        public List<int> Moves { get; set; }
         #endregion Properties
 
         #region Private Variables
@@ -17,16 +17,32 @@ namespace ChessGame.ConsoleApp
         #endregion Private Variables
 
         #region Public Methods
-        //need to complete this overide method
+        public Rook()
+        {
+            Moves = new List<int>();
+            Moves.Add((int)Direction.Up);
+            Moves.Add((int)Direction.Down);
+            Moves.Add((int)Direction.Left);
+            Moves.Add((int)Direction.Right);
+        }
+
+
         public override bool IsValidMove(Board board, int dst)
         {
-            int i, j;
+
             // int stepCount = board.CalculateSteps(this, dst);
             int src = board.WhereIs(this);
-            Tuple<int,int> srcPlace = board.GetCoordinate(src);
+            Tuple<int, int> srcPlace = board.GetCoordinate(src);
             Tuple<int, int> dstPlace = board.GetCoordinate(dst);
+            Direction dir = Direction.LowerLeft;
             if (dstPlace.Item2 < srcPlace.Item2)
-                return Direction.Left;
+                dir = Direction.Left;
+            else if (dstPlace.Item2 > srcPlace.Item2)
+                dir = Direction.Right;
+            else if (dstPlace.Item1 < srcPlace.Item1)
+                dir = Direction.Up;
+            else if (dstPlace.Item1 > srcPlace.Item1)
+                dir = Direction.Down;
             switch (dir)
             {
                 case Direction.Up:
@@ -37,7 +53,7 @@ namespace ChessGame.ConsoleApp
 
                 case Direction.Down:
                     int a = board.WhereIs(this);
-                   // int toDown = a - stepCount;
+                    // int toDown = a - stepCount;
                     board.SetPiece(this, dst);
                     return true;
 
@@ -61,13 +77,6 @@ namespace ChessGame.ConsoleApp
 
         }
 
-        public bool CalculateDirection(Board board, int dst)
-        {
-            int currentPlace = board.WhereIs(this);
-           
-            return false;
-        }
-      
         #endregion Public Methods
     }
 }
