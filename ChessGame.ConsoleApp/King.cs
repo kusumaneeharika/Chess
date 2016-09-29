@@ -8,6 +8,9 @@ namespace ChessGame.ConsoleApp
 {
     class King : Piece
     {
+        public King(PieceColor pColor, PieceType pType) : base(pColor, pType)
+        {
+        }
         #region Public Methods
         public override bool IsValidMove(Board board, int dst)
         {

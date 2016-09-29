@@ -8,6 +8,9 @@ namespace ChessGame.ConsoleApp
 {
     class Pawn : Piece
     {
+        public Pawn(PieceColor pColor, PieceType pType) : base(pColor, pType)
+        {
+        }
         #region Properties
         public bool IsWhiteOrBlack { get; set; }
 

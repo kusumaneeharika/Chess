@@ -17,16 +17,21 @@ namespace ChessGame.ConsoleApp
         LowerLeft,
         LowerRight,
 
-    }
+    };
 
     public enum PieceColor
     {
         White,
         Black
-    }
+    };
 
-    public enum GameExceptions
+   public enum PieceType
     {
-        InvalidMove ,
-    }
+        Pawn,
+        Rook,
+        Knight,
+        Bishop,
+        Queen,
+        King
+    };
 }

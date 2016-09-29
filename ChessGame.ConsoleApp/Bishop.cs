@@ -11,9 +11,12 @@ namespace ChessGame.ConsoleApp
         #region Public Methods
         //public override bool IsValidMove(Board board, int dst,Direction dir)
         //{
-           
+
         //}
         #endregion Public Methods
+        public Bishop(PieceColor pColor, PieceType pType) : base(pColor, pType)
+        {
+        }
     }
 
 }

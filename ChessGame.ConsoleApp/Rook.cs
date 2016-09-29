@@ -17,59 +17,58 @@ namespace ChessGame.ConsoleApp
         #endregion Private Variables
 
         #region Public Methods
-        public Rook()
+      
+        public Rook(PieceColor pColor, PieceType pType) : base(pColor, pType)
         {
-            Moves = new List<int>();
-            Moves.Add((int)Direction.Up);
-            Moves.Add((int)Direction.Down);
-            Moves.Add((int)Direction.Left);
-            Moves.Add((int)Direction.Right);
         }
-
 
         public override bool IsValidMove(Board board, int dst)
         {
             //ToDo: checking for pieces of same and diffrnt color
             int src = board.WhereIs(this);
-            Tuple<int, int> srcPlace = board.GetCoordinate(src);
+            Tuple<int, int> srcPlace = board.GetCoordinate(Convert.ToInt32(this));
             Tuple<int, int> dstPlace = board.GetCoordinate(dst);
-            Direction dir = Direction.LowerLeft;
-            if (dstPlace.Item2 < srcPlace.Item2)
-                dir = Direction.Left;
-            else if (dstPlace.Item2 > srcPlace.Item2)
-                dir = Direction.Right;
-            else if (dstPlace.Item1 < srcPlace.Item1)
-                dir = Direction.Up;
-            else if (dstPlace.Item1 > srcPlace.Item1)
-                dir = Direction.Down;
-            switch (dir)
-            {
-                case Direction.Up:
-                    int x = board.WhereIs(this);
-                    board.SetPiece(this, dst);
-                    return true;
+            
+            return true;
+            //Direction dir = Direction.LowerLeft;
+            //if (dstPlace.Item2 < srcPlace.Item2)
+            //    dir = Direction.Left;
+            //else if (dstPlace.Item2 > srcPlace.Item2)
+            //    dir = Direction.Right;
+            //else if (dstPlace.Item1 < srcPlace.Item1)
+            //    dir = Direction.Up;
+            //else if (dstPlace.Item1 > srcPlace.Item1)
+            //    dir = Direction.Down;
+            //switch (dir)
+            //{
+            //    case Direction.Up:
+            //        int x = board.WhereIs(this);
+            //        board.SetPiece(this, dst);
+            //        return true;
 
-                case Direction.Down:
-                    int a = board.WhereIs(this);
-                    board.SetPiece(this, dst);
-                    return true;
+            //    case Direction.Down:
+            //        int a = board.WhereIs(this);
+            //        board.SetPiece(this, dst);
+            //        return true;
 
-                case Direction.Left:
-                    int y = board.WhereIs(this);
-                    board.SetPiece(this, dst);
-                    return true;
+            //    case Direction.Left:
+            //        int y = board.WhereIs(this);
+            //        board.SetPiece(this, dst);
+            //        return true;
 
-                case Direction.Right:
-                    int z = board.WhereIs(this);
-                    board.SetPiece(this, dst);
-                    return true;
+            //    case Direction.Right:
+            //        int z = board.WhereIs(this);
+            //        board.SetPiece(this, dst);
+            //        return true;
 
-                default:
-                    return false;
+            //    default:
+            //        return false;
 
-            }
+            //}
+
         }
 
+      
         #endregion Public Methods
     }
 }

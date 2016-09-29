@@ -8,17 +8,29 @@ namespace ChessGame.ConsoleApp
 {
     abstract class Piece
     {
-        #region Properties
-        public bool IsWhite { get; set; }
+
+        //public bool IsWhite { get; set; }
+
+        private PieceType PieceType { get; set; }
+
+        private PieceColor PieceColor { get; set; }
+
+        public bool CanCastle { get; set; }
+
+        public Tuple<int,int> PiecePosition { get; set; }
         
         public int CurrentPosition { get; set; }
-        #endregion Properties
-
-        #region Public Methods
+       
+        public Piece(PieceColor pColor,PieceType pType)
+        {
+            PieceColor = pColor;
+            PieceType = pType;
+            CanCastle = ((pType == PieceType.King) || (pType == PieceType.Rook));
+        }
         public virtual bool IsValidMove(Board board, int dst)
         {
             return true;
         }
-        #endregion Public Methods
+        
     }
 }
