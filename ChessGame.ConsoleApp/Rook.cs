@@ -25,9 +25,9 @@ namespace ChessGame.ConsoleApp
         public override bool IsValidMove(Board board, int dst)
         {
             //ToDo: checking for pieces of same and diffrnt color
-            int src = board.WhereIs(this);
-            Tuple<int, int> srcPlace = board.GetCoordinate(Convert.ToInt32(this));
-            Tuple<int, int> dstPlace = board.GetCoordinate(dst);
+            //int src = board.WhereIs(this);
+            Tuple<int, int> srcPlace = board.WhereIs(this);
+            //Tuple<int, int> dstPlace = board.GetCoordinate(dst);
             
             return true;
             //Direction dir = Direction.LowerLeft;

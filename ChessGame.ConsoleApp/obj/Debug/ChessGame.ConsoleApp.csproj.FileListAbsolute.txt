@@ -8,3 +8,5 @@ E:\ChessGitRepo\ChessGame.ConsoleApp\bin\Debug\ChessGame.ConsoleApp.exe.config
 E:\ChessGitRepo\ChessGame.ConsoleApp\obj\Debug\ChessGame.ConsoleApp.exe
 E:\ChessGitRepo\ChessGame.ConsoleApp\obj\Debug\ChessGame.ConsoleApp.pdb
 E:\ChessGitRepo\ChessGame.ConsoleApp\obj\Debug\ChessGame.ConsoleApp.csprojResolveAssemblyReference.cache
+E:\ChessGitRepo\ChessGame.ConsoleApp\bin\Debug\ChessGame.ConsoleApp.exe
+E:\ChessGitRepo\ChessGame.ConsoleApp\bin\Debug\ChessGame.ConsoleApp.pdb

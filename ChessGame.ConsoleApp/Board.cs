@@ -25,7 +25,7 @@ namespace ChessGame.ConsoleApp
 
         Piece[,] pieces = new Piece[8,8];
 
-        public Piece GetPiece(int location)
+        public Piece GetPiece(Tuple<int,int> location)
         {
             //Piece piece = pieces[location / 8,location % 8];
             //return piece;
@@ -36,9 +36,9 @@ namespace ChessGame.ConsoleApp
 
                 if (piece != null)
                 {
-                    if ((GetPiecePosition().Item1 == (location/8))
-                        && ((GetPiecePosition().Item2 == location % 8)))
-                        return piece;
+                    if ((GetPiecePosition().Item1 == location.Item1)
+                        && (GetPiecePosition().Item2 == location.Item2))
+                        return piece; 
                 }
             }
             return null;
@@ -66,9 +66,9 @@ namespace ChessGame.ConsoleApp
             return false;
         }
 
-        public int WhereIs(Piece piece)
+        public Tuple<int,int> WhereIs(Piece piece)
         {
-            return piece.CurrentPosition;
+            return new Tuple<int, int>(piece.PiecePosition.Item1, piece.PiecePosition.Item2);
         }
 
         public void SetPiece(Piece piece,int place)

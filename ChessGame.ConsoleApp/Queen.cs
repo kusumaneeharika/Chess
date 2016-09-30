@@ -25,9 +25,9 @@ namespace ChessGame.ConsoleApp
         public override bool IsValidMove(Board board, int dst)
         {
             //Todo: Need to check for other pieces when the queen is moving
-            int src = board.WhereIs(this);
-            Tuple<int, int> srcPlace = board.GetCoordinate(src);
-            Tuple<int, int> dstPlace = board.GetCoordinate(dst);
+            //int src = board.WhereIs(this);
+            Tuple<int, int> srcPlace = board.WhereIs(this);
+            //Tuple<int, int> dstPlace = board.WhereIs(dst);
             board.SetPiece(this, dst);
             return true;
             }

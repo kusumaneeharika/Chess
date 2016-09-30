@@ -11,15 +11,15 @@ namespace ChessGame.ConsoleApp
 
         //public bool IsWhite { get; set; }
 
-        private PieceType PieceType { get; set; }
+        public PieceType PieceType { get; set; }
 
-        private PieceColor PieceColor { get; set; }
+        public PieceColor PieceColor { get; set; }
 
         public bool CanCastle { get; set; }
 
         public Tuple<int,int> PiecePosition { get; set; }
         
-        public int CurrentPosition { get; set; }
+       // public int CurrentPosition { get; set; }
        
         public Piece(PieceColor pColor,PieceType pType)
         {
