@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,9 @@ namespace ChessGame.ConsoleApp
 {
     class Rook : Piece
     {
+        private ArrayList validMoves;
         #region Properties
-        public List<int> Moves { get; set; }
+        //public List<int> Moves { get; set; }
         #endregion Properties
 
         #region Private Variables
@@ -17,7 +19,7 @@ namespace ChessGame.ConsoleApp
         #endregion Private Variables
 
         #region Public Methods
-      
+
         public Rook(PieceColor pColor, PieceType pType) : base(pColor, pType)
         {
         }
@@ -68,7 +70,36 @@ namespace ChessGame.ConsoleApp
 
         }
 
-      
+        public ArrayList CalculatePositions(Board board)
+        {
+            MoveUp(new Tuple<int, int>(board.GetPiecePosition().Item1, board.GetPiecePosition().Item2));
+            MoveDown(new Tuple<int, int>(board.GetPiecePosition().Item1, board.GetPiecePosition().Item2));
+            MoveLeft(new Tuple<int, int>(board.GetPiecePosition().Item1, board.GetPiecePosition().Item2));
+            MoveRight(new Tuple<int, int>(board.GetPiecePosition().Item1, board.GetPiecePosition().Item2));
+
+            return validMoves;
+        }
+
+        private void MoveDown(Tuple<int, int> tuple)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void MoveLeft(Tuple<int, int> tuple)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void MoveRight(Tuple<int, int> tuple)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void MoveUp(Tuple<int, int> tuple)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion Public Methods
     }
 }
