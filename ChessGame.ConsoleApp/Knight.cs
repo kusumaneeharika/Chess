@@ -21,21 +21,21 @@ namespace ChessGame.ConsoleApp
             return base.IsValidMove(board, dst);
         }
 
-        public ArrayList CalculatePositions(Board board, int dst)
+        public ArrayList CalculatePositions(Board board )
         {
-            UpLeft(new Tuple<int, int>(board.GetPiecePosition().Item1, board.GetPiecePosition().Item2), dst);
-            UpRight(new Tuple<int, int>(board.GetPiecePosition().Item1, board.GetPiecePosition().Item2), dst);
-            DownLeft(new Tuple<int, int>(board.GetPiecePosition().Item1, board.GetPiecePosition().Item2), dst);
-            DownRight(new Tuple<int, int>(board.GetPiecePosition().Item1, board.GetPiecePosition().Item2), dst);
-            LeftUp(new Tuple<int, int>(board.GetPiecePosition().Item1, board.GetPiecePosition().Item2), dst);
-            LeftDown(new Tuple<int, int>(board.GetPiecePosition().Item1, board.GetPiecePosition().Item2), dst);
-            RightUp(new Tuple<int, int>(board.GetPiecePosition().Item1, board.GetPiecePosition().Item2), dst);
-            RightDown(new Tuple<int, int>(board.GetPiecePosition().Item1, board.GetPiecePosition().Item2), dst);
+            UpLeft(new Tuple<int, int>(board.GetPiecePosition().Item1, board.GetPiecePosition().Item2));
+            UpRight(new Tuple<int, int>(board.GetPiecePosition().Item1, board.GetPiecePosition().Item2));
+            DownLeft(new Tuple<int, int>(board.GetPiecePosition().Item1, board.GetPiecePosition().Item2));
+            DownRight(new Tuple<int, int>(board.GetPiecePosition().Item1, board.GetPiecePosition().Item2));
+            LeftUp(new Tuple<int, int>(board.GetPiecePosition().Item1, board.GetPiecePosition().Item2));
+            LeftDown(new Tuple<int, int>(board.GetPiecePosition().Item1, board.GetPiecePosition().Item2));
+            RightUp(new Tuple<int, int>(board.GetPiecePosition().Item1, board.GetPiecePosition().Item2));
+            RightDown(new Tuple<int, int>(board.GetPiecePosition().Item1, board.GetPiecePosition().Item2));
 
             return possibleMoves;
         }
 
-        private void RightDown(Tuple<int, int> tp, int dst)
+        private void RightDown(Tuple<int, int> tp)
         {
             if (Rule.KnightRightDown(ref tp))
             {
@@ -44,7 +44,7 @@ namespace ChessGame.ConsoleApp
             }
         }
 
-        private void RightUp(Tuple<int, int> tp, int dst)
+        private void RightUp(Tuple<int, int> tp)
         {
             if (Rule.KnightRightUp(ref tp))
             {
@@ -52,7 +52,7 @@ namespace ChessGame.ConsoleApp
             }
         }
 
-        private void LeftDown(Tuple<int, int> tp, int dst)
+        private void LeftDown(Tuple<int, int> tp)
         {
             if (Rule.KnightLeftUp(ref tp))
             {
@@ -60,7 +60,7 @@ namespace ChessGame.ConsoleApp
             }
         }
 
-        private void LeftUp(Tuple<int, int> tp, int dst)
+        private void LeftUp(Tuple<int, int> tp)
         {
             if (Rule.KnightLeftUp(ref tp))
             {
@@ -68,15 +68,15 @@ namespace ChessGame.ConsoleApp
             }
         }
 
-        private void DownRight(Tuple<int, int> tp, int dst)
+        private void DownRight(Tuple<int, int> tp)
         {
-            if (Rule.KnightDownRight(ref tp))
+            if (Rule.KnightRightDown(ref tp))
             {
                 ProcessMove(tp.Item1, tp.Item2);
             }
         }
 
-        private void DownLeft(Tuple<int, int> tp, int dst)
+        private void DownLeft(Tuple<int, int> tp)
         {
             if (Rule.KnightDownLeft(ref tp))
             {
@@ -84,7 +84,7 @@ namespace ChessGame.ConsoleApp
             }
         }
 
-        private void UpRight(Tuple<int, int> tp, int dst)
+        private void UpRight(Tuple<int, int> tp)
         {
             if (Rule.KnightUpRight(ref tp))
             {
@@ -92,7 +92,7 @@ namespace ChessGame.ConsoleApp
             }
         }
 
-        public void UpLeft(Tuple<int,int> tp,int dst)
+        private void UpLeft(Tuple<int,int> tp)
         {
             if(Rule.KnightUpLeft(ref tp))
             {
