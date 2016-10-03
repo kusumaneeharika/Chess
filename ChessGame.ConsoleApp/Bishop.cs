@@ -22,10 +22,10 @@ namespace ChessGame.ConsoleApp
 
         public ArrayList  CalculatePosition(Board board)
         {
-            MoveUpLeft(new Tuple<int, int>(board.GetPiecePosition().Item1, board.GetPiecePosition().Item2));
-            MoveUpRight(new Tuple<int, int>(board.GetPiecePosition().Item1, board.GetPiecePosition().Item2));
-            MoveDownLeft(new Tuple<int, int>(board.GetPiecePosition().Item1, board.GetPiecePosition().Item2));
-            MoveDownRight(new Tuple<int, int>(board.GetPiecePosition().Item1, board.GetPiecePosition().Item2));
+            MoveUpLeft(new Tuple<int, int>(board.GetPiecePosition(this).Item1, board.GetPiecePosition(this).Item2));
+            MoveUpRight(new Tuple<int, int>(board.GetPiecePosition(this).Item1, board.GetPiecePosition(this).Item2));
+            MoveDownLeft(new Tuple<int, int>(board.GetPiecePosition(this).Item1, board.GetPiecePosition(this).Item2));
+            MoveDownRight(new Tuple<int, int>(board.GetPiecePosition(this).Item1, board.GetPiecePosition(this).Item2));
 
             return validMoves;
         }

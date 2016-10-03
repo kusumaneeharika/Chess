@@ -81,7 +81,7 @@ namespace ChessGame.ConsoleApp
             return new Tuple<int, int>(place / 8, place % 8);
         }
 
-        public Tuple<int, int> GetPiecePosition()
+        public Tuple<int, int> GetPiecePosition(Piece piece)
         {
             return piecePosition;
         }

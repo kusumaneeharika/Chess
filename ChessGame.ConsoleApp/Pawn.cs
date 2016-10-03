@@ -36,8 +36,8 @@ namespace ChessGame.ConsoleApp
 
         public ArrayList CalculatePositions(Board board)
         {
-            MoveUp(new Tuple<int, int>(board.GetPiecePosition().Item1, board.GetPiecePosition().Item2));
-            MoveDown(new Tuple<int, int>(board.GetPiecePosition().Item1, board.GetPiecePosition().Item2));
+            MoveUp(new Tuple<int, int>(board.GetPiecePosition(this).Item1, board.GetPiecePosition(this).Item2));
+            MoveDown(new Tuple<int, int>(board.GetPiecePosition(this).Item1, board.GetPiecePosition(this).Item2));
 
             return validMoves;
         }

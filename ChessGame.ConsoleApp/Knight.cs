@@ -23,14 +23,14 @@ namespace ChessGame.ConsoleApp
 
         public ArrayList CalculatePositions(Board board )
         {
-            UpLeft(new Tuple<int, int>(board.GetPiecePosition().Item1, board.GetPiecePosition().Item2));
-            UpRight(new Tuple<int, int>(board.GetPiecePosition().Item1, board.GetPiecePosition().Item2));
-            DownLeft(new Tuple<int, int>(board.GetPiecePosition().Item1, board.GetPiecePosition().Item2));
-            DownRight(new Tuple<int, int>(board.GetPiecePosition().Item1, board.GetPiecePosition().Item2));
-            LeftUp(new Tuple<int, int>(board.GetPiecePosition().Item1, board.GetPiecePosition().Item2));
-            LeftDown(new Tuple<int, int>(board.GetPiecePosition().Item1, board.GetPiecePosition().Item2));
-            RightUp(new Tuple<int, int>(board.GetPiecePosition().Item1, board.GetPiecePosition().Item2));
-            RightDown(new Tuple<int, int>(board.GetPiecePosition().Item1, board.GetPiecePosition().Item2));
+            UpLeft(new Tuple<int, int>(board.GetPiecePosition(this).Item1, board.GetPiecePosition(this).Item2));
+            UpRight(new Tuple<int, int>(board.GetPiecePosition(this).Item1, board.GetPiecePosition(this).Item2));
+            DownLeft(new Tuple<int, int>(board.GetPiecePosition(this).Item1, board.GetPiecePosition(this).Item2));
+            DownRight(new Tuple<int, int>(board.GetPiecePosition(this).Item1, board.GetPiecePosition(this).Item2));
+            LeftUp(new Tuple<int, int>(board.GetPiecePosition(this).Item1, board.GetPiecePosition(this).Item2));
+            LeftDown(new Tuple<int, int>(board.GetPiecePosition(this).Item1, board.GetPiecePosition(this).Item2));
+            RightUp(new Tuple<int, int>(board.GetPiecePosition(this).Item1, board.GetPiecePosition(this).Item2));
+            RightDown(new Tuple<int, int>(board.GetPiecePosition(this).Item1, board.GetPiecePosition(this).Item2));
 
             return possibleMoves;
         }
